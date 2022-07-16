@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+body {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Noto Serif', serif;
+    max-width: 1200px;
+    background: linear-gradient(to right, #ee9ca7, #ffdde1);
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+}
+
+/* nav & footer styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav h1 {
+    font-size: 3em;
+    color: rgb(128, 9, 33);
+}
+
+nav a {
+    color: rgb(128, 9, 33);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.content {
+    margin: 0 25px 40px 25px;
+}
+
+.note-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+
+.note-card {
+    padding: 25px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.create-note form {
+    max-width: 400px;
+    margin: 0 auto;
+    border: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+form h2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+    color: rgb(128, 9, 33);
+}
+
+.create-note input,
+.create-note textarea {
+    width: 80%;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+    font-size: 1.2em;
+}
+
+.create-note input:focus {
+    outline: 3px solid rgb(128, 9, 33);
+}
+
+textarea {
+    height: 180px;
+    resize: none;
+}
+
+textarea:focus {
+    outline: 3px solid rgb(128, 9, 33);
+}
+
+.create-note button {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    background: rgb(128, 9, 33);
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 40%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+}
+
+.create-note button:hover {
+    background: none;
+    color: rgb(128, 9, 33);
+    border: 2px solid rgb(128, 9, 33);
+}
+
+.not-found {
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .note-section {
+        grid-template-columns: 1fr;
+    }
+}
