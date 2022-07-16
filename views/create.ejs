@@ -7,19 +7,14 @@
 
         <%- include('./partials/nav.ejs') %>
 
-            <div class="create-blog content">
+            <div class="create-note content">
                 <form>
-                    <label for="title">Blog Title:</label>
-                    <input type="text" id="title" required>
-                    <label for="snippet">Blog Snippet:</label>
-                    <input type="text" id="snippet" required>
-                    <label for="body">Blog Body:</label>
-                    <textarea id="body" required></textarea>
-                    <button>Submit</button>
+                    <h2>Create new note!</h2>
+                    <input type="text" id="title" placeholder="Title" required>
+                    <textarea id="body" placeholder="Type your note.." required></textarea>
+                    <button>Create</button>
                 </form>
             </div>
-
-            <%- include('./partials/footer.ejs') %>
 
     </body>
 

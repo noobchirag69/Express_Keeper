@@ -7,23 +7,25 @@
 
         <%- include('./partials/nav.ejs') %>
 
-            <div class="blogs content">
-                <h2>All Blogs</h2>
-                <% if (blogs.length> 0) { %>
-                    <% blogs.forEach(blog=> { %>
-                        <h3 class="title">
-                            <%= blog.title %>
-                        </h3>
-                        <p class="snippet">
-                            <%= blog.snippet %>
-                        </p>
-                        <% }) %>
-                            <% } else { %>
-                                <p>There are currently no blogs to display!</p>
-                                <% } %>
+            <div class="notes content">
+                <div class="note-section">
+                    <% if (notes.length> 0) { %>
+                        <% notes.forEach(note=> { %>
+                            <div class="note-card">
+                                <h3 class="title">
+                                    <%= note.title %>
+                                </h3>
+                                <p class="body">
+                                    <%= note.body %>
+                                </p>
+                            </div>
+                            <% }) %>
+                                <% } else { %>
+                                    <h3>Add a note to display it
+                                        here!</h3>
+                                    <% } %>
+                </div>
             </div>
-
-            <%- include('./partials/footer.ejs') %>
 
     </body>
 
