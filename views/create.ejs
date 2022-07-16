@@ -8,10 +8,10 @@
         <%- include('./partials/nav.ejs') %>
 
             <div class="create-note content">
-                <form>
+                <form action="/" method="POST">
                     <h2>Create new note!</h2>
-                    <input type="text" id="title" placeholder="Title" required>
-                    <textarea id="body" placeholder="Type your note.." required></textarea>
+                    <input type="text" id="title" name="title" placeholder="Title" required>
+                    <textarea id="body" name="body" placeholder="Type your note.." required></textarea>
                     <button>Save</button>
                 </form>
             </div>

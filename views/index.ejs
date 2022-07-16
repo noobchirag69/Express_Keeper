@@ -12,12 +12,14 @@
                     <% if (notes.length> 0) { %>
                         <% notes.forEach(note=> { %>
                             <div class="note-card">
-                                <h3 class="title">
-                                    <%= note.title %>
-                                </h3>
-                                <p class="body">
-                                    <%= note.body %>
-                                </p>
+                                <a href="/<%= note.id %>" class="single">
+                                    <h3 class="title">
+                                        <%= note.title %>
+                                    </h3>
+                                    <p class="body">
+                                        <%= note.body %>
+                                    </p>
+                                </a>
                             </div>
                             <% }) %>
                                 <% } else { %>

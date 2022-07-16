@@ -136,6 +136,32 @@ textarea:focus {
     border: 2px solid rgb(128, 9, 33);
 }
 
+.details {
+    padding: 25px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.details button {
+    margin-top: 20px;
+    background: rgb(128, 9, 33);
+    color: white;
+    border: none;
+    height: 50px;
+    width: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
+}
+
+.details button:hover {
+    background: none;
+    color: rgb(128, 9, 33);
+    border: 2px solid rgb(128, 9, 33);
+}
+
 .not-found {
     text-align: center;
 }
