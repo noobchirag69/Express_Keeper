@@ -6,7 +6,7 @@ const note_index = (req, res) => {
         .then(result => {
             res.render('index', { title: 'Home', notes: result });
         })
-        .catch(err => console.log(err));
+        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
 const note_details = (req, res) => {
@@ -15,7 +15,7 @@ const note_details = (req, res) => {
         .then(result => {
             res.render('details', { note: result, title: 'Note Details' })
         })
-        .catch(err => console.log(err));
+        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
 const note_create_get = (req, res) => {
@@ -26,7 +26,7 @@ const note_create_post = (req, res) => {
     const note = new Note(req.body);
     note.save()
         .then(result => res.redirect('/'))
-        .catch(err => console.log(err));
+        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
 const note_delete = (req, res) => {
@@ -35,7 +35,7 @@ const note_delete = (req, res) => {
         .then(result => {
             res.json({ redirect: '/' })
         })
-        .catch(err => console.log(err));
+        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
 module.exports = {
