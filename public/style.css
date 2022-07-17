@@ -145,6 +145,7 @@ textarea:focus {
 
 .details button {
     margin-top: 20px;
+    margin-right: 15px;
     background: rgb(128, 9, 33);
     color: white;
     border: none;
