@@ -59,7 +59,7 @@ h2 {
 
 .note-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: auto auto;
     grid-gap: 40px;
 }
 
@@ -169,6 +169,6 @@ textarea:focus {
 
 @media only screen and (max-width: 800px) {
     .note-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto;
     }
 }
