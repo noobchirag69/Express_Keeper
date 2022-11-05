@@ -1,6 +1,8 @@
 const Note = require('../models/note');
 
 // Controller Functions
+
+// Getting all notes from the database
 const note_index = (req, res) => {
     Note.find().sort({ createdAt: -1 })
         .then(result => {
@@ -9,6 +11,7 @@ const note_index = (req, res) => {
         .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
+// Getting a sigle note based on it's ID
 const note_details = (req, res) => {
     const id = req.params.id;
     Note.findById(id)
@@ -18,10 +21,12 @@ const note_details = (req, res) => {
         .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
+// Rendering the form
 const note_create_get = (req, res) => {
     res.render('create', { title: 'Create' });
 };
 
+// Saving a note
 const note_create_post = (req, res) => {
     const note = new Note(req.body);
     note.save()
@@ -29,6 +34,7 @@ const note_create_post = (req, res) => {
         .catch(err => res.status(404).render('error', { title: 'Not Found' }));
 };
 
+// Deleting a note
 const note_delete = (req, res) => {
     const id = req.params.id;
     Note.findByIdAndDelete(id)
