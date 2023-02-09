@@ -6,7 +6,7 @@ const noteRoutes = require('./routes/noteRoutes');
 const app = express();
 
 // Connect to MongoDB
-const dbURI = 'mongodb+srv://noobchirag69:pass6300@cluster0.7vee4.mongodb.net/keeper?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://chiragiemlabs007:0mMVVV9oHUfMsIDo@notepadcluster.tnx3oxu.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => app.listen(process.env.PORT || 3000))
     .catch(err => console.log(err));
