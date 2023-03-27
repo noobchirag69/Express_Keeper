@@ -12,14 +12,17 @@
                     <% if (notes.length> 0) { %>
                         <% notes.forEach(note=> { %>
                             <div class="note-card">
-                                <a href="/<%= note.id %>" class="single">
-                                    <h3 class="title">
-                                        <%= note.title %>
-                                    </h3>
-                                    <p class="body">
-                                        <%= note.body %>
-                                    </p>
-                                </a>
+                                <h3 class="title"><%= note.title %></h3>
+                                <p class="body"><%= note.body %></p>
+                                <div class="note-actions">
+                                    <a class="update" href="/edit/<%= note._id%>">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <a class="delete" href="/<%= note._id%>"
+                                        onclick="return confirm('Delete this note?')">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </div>
                             </div>
                             <% }) %>
                                 <% } else { %>

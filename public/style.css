@@ -49,6 +49,10 @@ nav a {
     color: rgb(128, 9, 33);
 }
 
+nav a:hover {
+    color: #000;
+}
+
 h2 {
     margin-bottom: 10px;
 }
@@ -59,7 +63,7 @@ h2 {
 
 .note-section {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
 }
 
@@ -68,11 +72,30 @@ h2 {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
     border-radius: 8px;
     border: 1px solid transparent;
+    height: auto;
 }
 
 .title {
     margin-bottom: 20px;
     font-size: 1.5em;
+}
+
+.body {
+    white-space: pre-line;
+}
+
+.note-actions {
+    margin-top: 20px;
+}
+
+.note-actions a {
+    margin-right: 10px;
+    font-size: 24px;
+    color: rgb(128, 9, 33);
+}
+
+.note-actions a:hover {
+    color: #fff;
 }
 
 .create-note form {
@@ -136,39 +159,12 @@ textarea:focus {
     border: 2px solid rgb(128, 9, 33);
 }
 
-.details {
-    padding: 25px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
-    border-radius: 8px;
-    border: 1px solid transparent;
-}
-
-.details button {
-    margin-top: 20px;
-    margin-right: 15px;
-    background: rgb(128, 9, 33);
-    color: white;
-    border: none;
-    height: 50px;
-    width: 50px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.6), 0 4px 8px 3px rgba(0, 0, 0, 0.302);
-}
-
-.details button:hover {
-    background: none;
-    color: rgb(128, 9, 33);
-    border: 2px solid rgb(128, 9, 33);
-}
-
 .not-found {
     text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
     .note-section {
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
     }
 }

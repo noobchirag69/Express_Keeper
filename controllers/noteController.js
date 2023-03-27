@@ -8,20 +8,10 @@ const note_index = (req, res) => {
         .then(result => {
             res.render('index', { title: 'Home', notes: result });
         })
-        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
+        .catch(err => res.status(404).render('error', { title: 'Error' }));
 };
 
-// Getting a sigle note based on it's ID
-const note_details = (req, res) => {
-    const id = req.params.id;
-    Note.findById(id)
-        .then(result => {
-            res.render('details', { note: result, title: 'Note Details' })
-        })
-        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
-};
-
-// Rendering the form
+// Rendering the create form
 const note_create_get = (req, res) => {
     res.render('create', { title: 'Create' });
 };
@@ -31,23 +21,41 @@ const note_create_post = (req, res) => {
     const note = new Note(req.body);
     note.save()
         .then(result => res.redirect('/'))
-        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
+        .catch(err => res.status(404).render('error', { title: 'Error' }));
+};
+
+// Rendering the edit page
+const note_edit_get = (req, res) => {
+    const id = req.params.id;
+    Note.findById(id)
+      .then(result => {
+            res.render('edit', { note: result, title: 'Edit' });
+        })
+      .catch(err => res.status(404).render('error', { title: 'Error' }));
+};
+
+// Editing a note
+const note_edit_post = (req, res) => {
+    const id = req.params.id;
+    const note = req.body;
+    Note.findByIdAndUpdate(id, note)
+      .then(result => res.redirect('/'))
+      .catch(err => res.status(404).render('error', { title: 'Error' }));
 };
 
 // Deleting a note
 const note_delete = (req, res) => {
     const id = req.params.id;
     Note.findByIdAndDelete(id)
-        .then(result => {
-            res.json({ redirect: '/' })
-        })
-        .catch(err => res.status(404).render('error', { title: 'Not Found' }));
+        .then(result => res.redirect('/'))
+        .catch(err => res.status(404).render('error', { title: 'Error' }));
 };
 
 module.exports = {
     note_index,
-    note_details,
     note_create_get,
     note_create_post,
+    note_edit_get,
+    note_edit_post,
     note_delete
 }

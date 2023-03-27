@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+
+        <%- include('./partials/nav.ejs') %>
+
+            <div class="create-note content">
+                <form action="/edit/<%= note._id %>" method="POST">
+                    <h2>Create new note!</h2>
+                    <input type="text" id="title" name="title" placeholder="Title" autocomplete="off" value="<%= note.title %>" required>
+                    <textarea id="body" name="body" placeholder="Type your note.." autocomplete="off" maxLength="300" required><%= note.body %></textarea>
+                    <button>Save</button>
+                </form>
+            </div>
+
+    </body>
+
+</html>

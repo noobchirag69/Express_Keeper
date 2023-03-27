@@ -8,7 +8,9 @@ const app = express();
 // Connect to MongoDB
 const dbURI = 'mongodb+srv://chiragiemlabs007:0mMVVV9oHUfMsIDo@notepadcluster.tnx3oxu.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(result => app.listen(process.env.PORT || 3000))
+    .then(result => app.listen(process.env.PORT || 3000, () => {
+        console.log('Server running...');
+    }))
     .catch(err => console.log(err));
 
 // Register View Engine
